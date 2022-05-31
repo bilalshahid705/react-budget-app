@@ -15,9 +15,13 @@ const ExpenseList = () => {
 
   const deleteExpenseRow = useCallback(
     (value) => {
+      const deleteExpenses = filteredExpenses.filter(
+        (expense) => expense.id !== filteredExpenses[value].id
+      );
+      localStorage.setItem("expenses", JSON.stringify(deleteExpenses));
       dispatch({
         type: "DELETE_EXPENSE",
-        payload: filteredExpenses[value].id,
+        payload: deleteExpenses,
       });
     },
     [dispatch, filteredExpenses]
@@ -55,21 +59,9 @@ const ExpenseList = () => {
     }
   }, [filteredExpenses, deleteExpenseRow]);
 
-  console.log("columns", columns);
-
   return (
     <div>
-      {columns ? (
-        // <ul className="list-group mt-3 mb-3">
-        //   {filteredExpenses.map((expense, id) => (
-        //     <ExpenseItem
-        //       key={id}
-        //       id={expense.id}
-        //       name={expense.name}
-        //       cost={expense.cost}
-        //     />
-        //   ))}
-        // </ul>
+      {columns && filteredExpenses.length > 0 ? (
         <Table
           columns={columns}
           data={filteredExpenses}

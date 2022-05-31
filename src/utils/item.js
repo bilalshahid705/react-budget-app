@@ -44,27 +44,6 @@ export const Styles = styled.div`
     background: #eaeaea99;
   }
   tr {
-    .descript {
-      width: 100%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 2; /* number of lines to show */
-      line-clamp: 2;
-      -webkit-box-orient: vertical;
-      line-height: 20px;
-      max-height: 50px;
-    }
-    .edit {
-      width: 40px;
-    }
-    .qrCode {
-      img {
-        width: 150px;
-        height: 150px;
-      }
-      cursor: pointer;
-    }
     .btn-danger {
       margin: 10px 0;
     }

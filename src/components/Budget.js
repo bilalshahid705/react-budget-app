@@ -23,11 +23,11 @@ const Budget = () => {
   };
 
   return (
-    <div className="alert alert-secondary p-3 d-flex align-items-center justify-content-between">
-      <span>Budget: PKR {budget}</span>
+    <div className="alert alert-info p-3 d-flex align-items-center justify-content-between">
+      <span>Total: PKR {budget}</span>
       <button
         type="button"
-        className="btn btn-primary"
+        className="btn btn-info"
         onClick={() => setShow(true)}
       >
         Edit
@@ -37,7 +37,7 @@ const Budget = () => {
         <Modal.Header closeButton>
           <Modal.Title>Edit Budget</Modal.Title>
         </Modal.Header>
-        <Modal.Body style={{ display: "flex", justifyContent: "space-around" }}>
+        <Modal.Body className="d-flex align-items-center justify-content-evenly">
           <label>Amount:</label>
           <input
             type="text"
@@ -47,13 +47,6 @@ const Budget = () => {
           />
         </Modal.Body>
         <Modal.Footer>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={() => handleClose()}
-          >
-            Close
-          </button>
           <button
             type="button"
             className="btn btn-primary"
